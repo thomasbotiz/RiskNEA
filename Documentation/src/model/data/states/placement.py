@@ -1,4 +1,4 @@
-from ....utils.templates import State, Command, ImplicitEvent, ExplicitEvent
+from ...utils.templates import State, Command, ImplicitEvent, ExplicitEvent
 from ...main.game import Game
 from __future__ import annotations
 from dataclasses import dataclass
@@ -41,8 +41,7 @@ class PlacementState(State):
         Bert, that territory is claimed by someone else! 
         Bert, You have 15 units in total and 3 units to place now!
         """
-        pass
-
+        
     def on_enter(self):
         """
         Called directly after initialisation of PlacementState
@@ -66,7 +65,7 @@ class PlacementState(State):
         >>> Game.gamedata.state.on_enter() 
 
         """
-    
+
     def execute(self, command: Command) -> None:
         """
         Public interface that orchestrates the validation, execution and 
@@ -110,8 +109,7 @@ class PlacementState(State):
 
         Notes
         -----
-        The passed command must be of a subclass of PlacementCommand or
-        Command. 
+        The passed command must be Save, Load, PlaceUnit
         """
         pass
 

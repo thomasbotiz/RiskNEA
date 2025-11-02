@@ -1,4 +1,4 @@
-from ....utils.templates import State, Command, ImplicitEvent, ExplicitEvent
+from ...utils.templates import State, Command, ImplicitEvent, ExplicitEvent
 from ...main.game import Game
 from __future__ import annotations
 from enum import Enum
@@ -98,7 +98,7 @@ class AttackState(State):
 
     def _validate(self, command: Command) -> str:
         """
-        Method that ensures command is of the correct subclass
+        Method that ensures command is of the correct class
 
         Parameters
         ----------
@@ -124,8 +124,11 @@ class AttackState(State):
         and unplaced_units is greater than zero only allow commands of 
         instance PlaceUnitAttackCommand
 
-        Else, the passed command must be of a direct subclass of AttackCommand 
-        or Command.
+        The list of allowed commands are: Save, Load, TradeSet, PlaceUnit,
+        FocusOffensive, CancelOffensive, AttackManualCommand, AttackAutoCommand,
+        ChangeAttackerDice, ChangeDefenderDice, ChangeLossThreshold, 
+        FortifyCapturedTerritory, NextTurn
+
         """
     
     def _on_execute(self, result: ExplicitEvent) -> None:

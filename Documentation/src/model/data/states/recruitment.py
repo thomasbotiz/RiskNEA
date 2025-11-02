@@ -1,4 +1,4 @@
-from ....utils.templates import State, Command, ImplicitEvent, ExplicitEvent
+from ...utils.templates import State, Command, ImplicitEvent, ExplicitEvent
 from ...main.game import Game
 from __future__ import annotations
 from dataclasses import dataclass
@@ -22,9 +22,6 @@ class RecruitmentState(State):
             The player whose recruitment turn it is 
         units_left : int
             The number of units the player can recruit in their turn
-        max_cards : int
-            The maximum number of cards a player can hold at once
-            during the recruitment phase(default = 5)
 
         Example
         -------
@@ -118,8 +115,9 @@ class RecruitmentState(State):
 
         Notes
         -----
-        The passed command must be of a subclass of RecruitmentCommand or
-        Command. 
+        The allow commands are: TradeSet, RecruitUnit, NextTurn,
+        Save, Load
+
         """
         pass
 

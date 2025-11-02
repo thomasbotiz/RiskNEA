@@ -1,4 +1,4 @@
-from ....utils.templates import State, Command, ImplicitEvent, ExplicitEvent
+from ...utils.templates import State, Command, ImplicitEvent, ExplicitEvent
 from ...main.game import Game
 from __future__ import annotations
 from dataclasses import dataclass
@@ -77,8 +77,7 @@ class FortificationState(State):
 
         Notes
         -----
-        The passed command must be of a subclass of FortifyCommand or
-        Command. 
+        The allowed commands are: Load, Save, FortifyTerritory, NextTurn
         """
         pass
 

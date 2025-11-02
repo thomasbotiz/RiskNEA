@@ -65,10 +65,14 @@ class PlayerStats:
         Total number of successful dice comparisons
     total_friendly_units_eliminated : int
         Total number of unsuccessful dice comparisons
-    offensive_rolls : int
+    offensive_battles : int
         The number of battles (not dice) used offensively
-    defensive_rolls : int
+    defensive_battles : int
         The number of battles (not dice) used defensively
+    offensive_rolls : int
+        The number of dice rolled while defending
+    defensive_rolls : int
+        The number of dice rolled while defending
     avg_attacking_dice_used : int
         The average number of dice used while attacking
     avg_defending_dice_used : int

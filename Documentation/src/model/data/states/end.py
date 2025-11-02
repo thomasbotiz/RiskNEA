@@ -1,4 +1,4 @@
-from ....utils.templates import State, Command, ImplicitEvent, ExplicitEvent
+from ...utils.templates import State, Command, ImplicitEvent, ExplicitEvent
 from ...main.game import Game
 from __future__ import annotations
 from enum import Enum
@@ -57,9 +57,8 @@ class EndState(State):
         
         Notes
         -----
-        The only command that should be accepted in this phase 
-        is the command to cycle to the next player displayed
-        and to quit the Game
+        The commands that should be accepted are: Save, Load, 
+        CyclePlayer
         """
     
     def _on_execute(self, result: ExplicitEvent) -> None:
@@ -77,7 +76,6 @@ class EndState(State):
         If the player issues a request to quit the game, stop all further
         function.
 
-        
         Emitted Events
         --------------
         CyclePlayerEvent
